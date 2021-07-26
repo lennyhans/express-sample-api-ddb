@@ -7,6 +7,7 @@ const cors = require('cors')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const propiedadesMarcadasController = require("./api/controller/propiedadesMarcadasController");
+const getImageController = require("./api/controller/getImageController");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/propiedadesMarcadas' , propiedadesMarcadasController);
+app.use('/api/propiedadesMarcadas', propiedadesMarcadasController);
+app.use('/api/getImage', getImageController);
 
 module.exports = app;
